@@ -1,0 +1,39 @@
+# ── Trained model artifacts ────────────────────────────────
+model/
+model.zip
+model_export/
+
+# ── Datasets / runtime data ────────────────────────────────
+data/
+app/data/
+
+# ── Python ─────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtualenvs
+.venv/
+venv/
+env/
+app/backend/.venv/
+
+# ── Notebooks ──────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Environment / secrets ──────────────────────────────────
+.env
+.env.*
+
+# ── Editors / OS ───────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ── Logs ───────────────────────────────────────────────────
+*.log
