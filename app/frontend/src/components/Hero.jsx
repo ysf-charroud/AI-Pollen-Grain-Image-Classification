@@ -2,46 +2,41 @@ export default function Hero() {
   return (
     <>
       <section className="hero">
-        <div className="eyebrow">
-          <span className="dot"></span>SCIENCE FAIR · MACHINE LEARNING MEETS BOTANY
+        <div className="badge">
+          <span className="dot"></span>Machine learning · botany
         </div>
-        <h1 className="title">
-          Teaching a computer to recognise <em>pollen</em>
+        <h1 className="hero-title">
+          Identify <em>pollen species</em> from one microscope image
         </h1>
-        <p className="lede">
-          A small neural network that learns to tell 21 plant species apart — using
-          nothing but a single microscope image of a grain of pollen.
+        <p className="hero-sub">
+          A neural network trained to tell 21 plant species apart — upload a grain of
+          pollen and get an instant prediction with confidence scores.
         </p>
-        <p className="authors">
-          <span>Youssef Charroud</span><span className="sep">·</span>
-          <span>Marwane Laamiri</span><span className="sep">·</span>
+        <p className="hero-authors">
+          <span>Youssef Charroud</span><span className="sep">/</span>
+          <span>Marwane Laamiri</span><span className="sep">/</span>
           <span>Imad Najam</span>
         </p>
       </section>
 
-      <section className="statband">
-        <div className="stat">
-          <div className="stat-num">21</div>
-          <div className="stat-label">
-            plant species<br />it can name
-          </div>
+      <section className="bento">
+        <div className="tile span-3">
+          <div className="tile-value">21</div>
+          <div className="tile-name">plant species</div>
         </div>
-        <div className="stat">
-          <div className="stat-num">655</div>
-          <div className="stat-label">
-            microscope images<br />it studied
-          </div>
+        <div className="tile span-3">
+          <div className="tile-value">655</div>
+          <div className="tile-name">images studied</div>
         </div>
-        <div className="stat accent">
-          <div className="stat-num">98%</div>
-          <div className="stat-label">
-            learned from its<br />study images
+        <div className="tile span-6 tile-feature">
+          <div className="feature-col">
+            <div className="tile-value">98%</div>
+            <div className="tile-name">training accuracy</div>
           </div>
-        </div>
-        <div className="stat accent">
-          <div className="stat-num">72%</div>
-          <div className="stat-label">
-            correct on images<br />it had never seen
+          <div className="feature-divider" />
+          <div className="feature-col">
+            <div className="tile-value">72%</div>
+            <div className="tile-name">on unseen images</div>
           </div>
         </div>
       </section>

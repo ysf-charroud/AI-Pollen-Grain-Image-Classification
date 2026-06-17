@@ -26,12 +26,15 @@ export default function App() {
   }, []);
 
   return (
-    <div className="page">
-      <TopBar />
-      <Hero />
-      <Predictor classes={classes} onSaved={refreshStats} />
-      <Dataset stats={stats} error={statsError} />
-      <Footer />
-    </div>
+    <>
+      <div className="grain" aria-hidden="true" />
+      <div className="page">
+        <TopBar />
+        <Hero />
+        <Predictor classes={classes} onSaved={refreshStats} />
+        <Dataset stats={stats} error={statsError} />
+        <Footer />
+      </div>
+    </>
   );
 }

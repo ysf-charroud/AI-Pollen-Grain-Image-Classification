@@ -71,11 +71,14 @@ export default function Predictor({ classes, onSaved }) {
 
   return (
     <section className="card">
-      <h2 className="h2">Try it — upload a microscope image</h2>
-      <p className="muted">
-        Drop a 224×224 (or any size — we'll resize) PNG/JPG of a pollen grain. The model
-        will guess the species and tell you how confident it is.
-      </p>
+      <div className="card-head">
+        <span className="kicker">01 / Classify</span>
+        <h2 className="card-title">Upload a microscope image</h2>
+        <p className="card-sub">
+          Drop a PNG or JPG of a pollen grain (any size — we'll resize it). The model
+          returns its best guess and how confident it is.
+        </p>
+      </div>
 
       <Dropzone onFile={handleFile} />
 
@@ -90,11 +93,11 @@ export default function Predictor({ classes, onSaved }) {
             </div>
 
             <div className="result-info">
-              <div className="result-eyebrow">THE ANSWER</div>
+              <div className="result-eyebrow">Prediction</div>
               <div className="result-class">{predClass}</div>
               <div className="result-conf">
                 <span className="result-conf-label">confidence</span>
-                <span className="result-conf-val">{predConf}</span>
+                <span>{predConf}</span>
               </div>
 
               {result && <ConfidenceBars topK={result.top_k} />}
@@ -102,8 +105,8 @@ export default function Predictor({ classes, onSaved }) {
               <hr className="rule" />
 
               <div className="correction">
-                <div className="correction-eyebrow">DOES THIS LOOK RIGHT?</div>
-                <p className="muted small">
+                <div className="correction-eyebrow">Does this look right?</div>
+                <p className="muted small" style={{ margin: "0 0 12px" }}>
                   If the prediction is wrong, pick the correct species. Your label is stored
                   and will be used to retrain the model.
                 </p>
@@ -123,7 +126,7 @@ export default function Predictor({ classes, onSaved }) {
                   <button className="btn" onClick={onConfirm} disabled={saving || !result}>
                     Confirm prediction
                   </button>
-                  <button className="btn btn-orange" onClick={onCorrect} disabled={saving || !result}>
+                  <button className="btn btn-secondary" onClick={onCorrect} disabled={saving || !result}>
                     Save correction
                   </button>
                 </div>

@@ -1,11 +1,11 @@
 export default function TopBar() {
   return (
-    <header className="topbar">
-      <div className="brand">
-        <div className="brand-logo">FSBM</div>
-        <div className="brand-sub">Faculté des Sciences Ben M'Sik</div>
+    <header className="nav">
+      <div className="nav-brand">
+        <div className="logo">P</div>
+        <span className="nav-title">Pollen<em>ID</em></span>
       </div>
-      <div className="brand-right">Mathématiques &amp; Informatique</div>
+      <div className="nav-meta">FSBM · Maths &amp; Informatique</div>
     </header>
   );
 }

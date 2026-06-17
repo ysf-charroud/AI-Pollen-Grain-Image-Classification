@@ -1,8 +1,11 @@
 export default function Dataset({ stats, error }) {
   return (
     <section className="card">
-      <h2 className="h2">Retraining dataset — what we've collected</h2>
-      <p className="muted">Every confirmed label below feeds the next training round.</p>
+      <div className="card-head">
+        <span className="kicker">02 / Dataset</span>
+        <h2 className="card-title">Retraining dataset</h2>
+        <p className="card-sub">Every confirmed label below feeds the next training round.</p>
+      </div>
       <div className="stats-grid">
         {error ? (
           <div className="stats-empty">Could not load stats.</div>
