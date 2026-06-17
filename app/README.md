@@ -4,10 +4,22 @@ Image upload → prediction + confidence → user correction → samples stored 
 
 ## Stack
 - **Backend**: FastAPI + TensorFlow 2.21 (serves the `model.keras` trained in `main-pollen.ipynb`)
-- **Frontend**: vanilla HTML/CSS/JS, served as static files by FastAPI
+- **Frontend**: React (Vite). Built to `app/frontend/dist/` and served as static files by FastAPI
 - **Storage**: SQLite (`app/data/corrections.db`) + uploaded images in `app/data/uploads/`
 
 ## Run
+
+### 1. Build the frontend
+
+```powershell
+cd app\frontend
+npm install
+npm run build
+```
+
+This produces `app/frontend/dist/`, which FastAPI serves at `/`.
+
+### 2. Start the backend
 
 ```powershell
 cd app\backend
@@ -20,6 +32,19 @@ python main.py
 Then open <http://localhost:8000>.
 
 The backend expects `model/model.keras`, `model/class_names.json`, and `model/metadata.json` at the repo root — they are already there.
+
+### Frontend development
+
+For live-reloading UI work, run the Vite dev server (proxies `/api` to the
+backend on port 8000, so keep the backend running too):
+
+```powershell
+cd app\frontend
+npm run dev
+```
+
+Then open <http://localhost:5173>. Run `npm run build` again before relying on
+the FastAPI-served version at port 8000.
 
 ## API
 

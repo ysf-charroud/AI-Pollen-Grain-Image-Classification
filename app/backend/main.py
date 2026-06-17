@@ -34,7 +34,8 @@ MODEL_DIR    = PROJECT_ROOT / "model"
 DATA_DIR     = PROJECT_ROOT / "app" / "data"
 UPLOADS_DIR  = DATA_DIR / "uploads"
 DB_PATH      = DATA_DIR / "corrections.db"
-FRONTEND_DIR = PROJECT_ROOT / "app" / "frontend"
+# Vite build output. Run `npm run build` in app/frontend to (re)generate it.
+FRONTEND_DIR = PROJECT_ROOT / "app" / "frontend" / "dist"
 
 UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
 DATA_DIR.mkdir(parents=True, exist_ok=True)
